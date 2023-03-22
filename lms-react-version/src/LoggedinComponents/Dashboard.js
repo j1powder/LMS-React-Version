@@ -26,10 +26,39 @@ const clickHandler = () => {
     </Panel>
     
     {!isClicked && <Panel header="My Courses" toggleable>
- <Card className='coursecard' title="Aerial Lifts" onClick={clickHandler}></Card>
-    <Card className='coursecard' title="Fall Protection"></Card>
-    <Card className='coursecard' title="Hazard Communication"></Card>
-    <Card className='coursecard' title="Cold Stress"></Card>
+        <Panel header="Aerial Lifts" toggleable>
+            <Card className='coursecard' title="Welcome"></Card>
+            <Card className='coursecard' title="Introduction"></Card>
+            <Card className='coursecard' title="Equipment Requirements and Standards"></Card>
+            <Card className='coursecard' title="Safe Use of Aerial Lifts"></Card>
+            <Card className='coursecard' title="Hazards Associated with Aerial Lifts"></Card>
+            <Card className='coursecard' title="Training Requirements"></Card>
+        </Panel>
+        <Panel header="Fall Protection" toggleable>
+        <Card className='coursecard' title="Welcome"></Card>
+            <Card className='coursecard' title="Introduction"></Card>
+            <Card className='coursecard' title="Equipment Requirements and Standards"></Card>
+            <Card className='coursecard' title="Safe Use of Aerial Lifts"></Card>
+            <Card className='coursecard' title="Hazards Associated with Aerial Lifts"></Card>
+            <Card className='coursecard' title="Training Requirements"></Card>
+        </Panel>
+        <Panel header="Hazard Communication" toggleable>
+        <Card className='coursecard' title="Welcome"></Card>
+            <Card className='coursecard' title="Introduction"></Card>
+            <Card className='coursecard' title="Equipment Requirements and Standards"></Card>
+            <Card className='coursecard' title="Safe Use of Aerial Lifts"></Card>
+            <Card className='coursecard' title="Hazards Associated with Aerial Lifts"></Card>
+            <Card className='coursecard' title="Training Requirements"></Card>
+        </Panel>
+        <Panel header="Cold Stress" toggleable>
+        <Card className='coursecard' title="Welcome"></Card>
+            <Card className='coursecard' title="Introduction"></Card>
+            <Card className='coursecard' title="Equipment Requirements and Standards"></Card>
+            <Card className='coursecard' title="Safe Use of Aerial Lifts"></Card>
+            <Card className='coursecard' title="Hazards Associated with Aerial Lifts"></Card>
+            <Card className='coursecard' title="Training Requirements"></Card>
+        </Panel>
+ 
 </Panel> }
 
 {isClicked && <Panel header="My Courses" toggleable><Courses></Courses></Panel>}

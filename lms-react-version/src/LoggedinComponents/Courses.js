@@ -1,5 +1,6 @@
 import { Card } from 'primereact/card';
-import React from 'react';
+import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
 //import { OrderList } from 'primereact/orderlist';
 //import { ProductService } from './service/ProductService';
 //theme
@@ -12,27 +13,42 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 
-
 const Courses = () => {
-    
+    const [isWelcome, setIsWelcome] = useState(false);
+    //const [isIntro, setIsIntro] = useState(false);
+   
+    const welcomeHandler = () => {
+      setIsWelcome(true);
+    }
 
      const items = [
-        {name: 'Video 1', title: 'Introduction'},
-        {name: 'Video 2', title: 'Welcome'},
-        {name: 'Video 3', title: 'Course Content'},
-        {name: 'Video 4', title: 'Welcome'},
-        {name: 'Video 5', title: 'Welcome'},
-        {name: 'Video 6', title: 'Welcome'}
+        {name: 'Video 1', title: 'Welcome'},
+        {name: 'Video 2', title: 'Introduction'},
+        {name: 'Video 3', title: 'Equipment Requirements and Standards'},
+        {name: 'Video 4', title: 'Safe Use of Aerial Lifts'},
+        {name: 'Video 5', title: 'Hazards Associated with Aerial Lifts'},
+        {name: 'Video 6', title: 'Training Requirements'}
      ]; 
 
      const createSections = (item) => {
-        return <table><td>{item.name}</td><td>{item.title}</td></table>
+        return <h4> {item.name} {item.title}</h4>
      }
-
+    
+/*      const welcomeVideo = () => {
+      
+      return <div>
+         <ReactPlayer url="https://player.vimeo.com/video/519129758" />
+      </div>
+     } */
 
     return <>
     <Card title="Aerial Lifts">
-    <h4> {items.map(createSections)}</h4>
+    <h4 onClick={welcomeHandler}> {items.map(createSections)}</h4>
+    
+    {isWelcome && <div>
+         <ReactPlayer url="https://player.vimeo.com/video/519129758" controls />
+      </div>}
+
     </Card>
     </>
 }
