@@ -42,12 +42,35 @@ const Courses = () => {
      } */
 
     return <>
-    <Card title="Aerial Lifts">
-    <h4 onClick={welcomeHandler}> {items.map(createSections)}</h4>
+    <Card title="Welcome">
+{/*     <h4 onClick={welcomeHandler}> {items.map(createSections)}</h4>
     
-    {isWelcome && <div>
+    {isWelcome && <div> */}
+    <div >
          <ReactPlayer url="https://player.vimeo.com/video/519129758" controls />
-      </div>}
+    </div>
+
+{/*     <div>
+         <ReactPlayer url="https://player.vimeo.com/video/667507879" controls />
+    </div>
+
+    <div>
+         <ReactPlayer url="https://player.vimeo.com/video/667806838" controls />
+    </div>
+
+    <div>
+         <ReactPlayer url="https://player.vimeo.com/video/667831170" controls />
+    </div>
+
+    <div>
+         <ReactPlayer url="https://player.vimeo.com/video/667843822" controls />
+    </div>
+
+    <div>
+         <ReactPlayer url="https://player.vimeo.com/video/667857033" controls />
+    </div> */}
+
+   
 
     </Card>
     </>

@@ -19,6 +19,9 @@ const clickHandler = () => {
     setIsClicked(true);
 };
 
+/* const introClickHandler = () => {
+    setIntroIsClicked(true)
+} */
     return <Fragment>
     
    <Panel header="Company Data" toggleable>
@@ -27,8 +30,8 @@ const clickHandler = () => {
     
     {!isClicked && <Panel header="My Courses" toggleable>
         <Panel header="Aerial Lifts" toggleable>
-            <Card className='coursecard' title="Welcome"></Card>
-            <Card className='coursecard' title="Introduction"></Card>
+            <Card onClick={clickHandler}className='coursecard' title="welcome"></Card>
+            <Card onClick={clickHandler} className='coursecard' title="Introduction"></Card>
             <Card className='coursecard' title="Equipment Requirements and Standards"></Card>
             <Card className='coursecard' title="Safe Use of Aerial Lifts"></Card>
             <Card className='coursecard' title="Hazards Associated with Aerial Lifts"></Card>
@@ -62,7 +65,6 @@ const clickHandler = () => {
 </Panel> }
 
 {isClicked && <Panel header="My Courses" toggleable><Courses></Courses></Panel>}
-
     
 
     
