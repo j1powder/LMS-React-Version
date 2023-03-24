@@ -1,3 +1,10 @@
 .coursecard {
     margin: 1rem 0rem;
 }
+
+#videos {
+    display: block;
+    margin: 0rem auto;
+    width: 80%;
+    height: auto;
+}

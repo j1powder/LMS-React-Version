@@ -4,7 +4,7 @@ import Header from './Layout/Header';
 import Footer from './Layout/Footer';
 import HomePage from './components/Homepage';
 import LoginPage from './components/Loginpage';
-import { createBrowserRouter, RouterProvider, BrowserRouter, Routes, Route} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
 import Dashboard from './LoggedinComponents/Dashboard';
 //theme
 //import "primereact/resources/themes/lara-light-indigo/theme.css";     
