@@ -14,19 +14,28 @@ const ArcFlash = () => {
     const [isVid7Clicked, setIsVid7Clicked] = useState(false);
     const [isVid8Clicked, setIsVid8Clicked] = useState(false);
 
+/*     const sectionReducer = (state, action) => {
+ return {
+    isOpen: false,
+ }
+    } */
+    //const [sectionState, dispatchSection] = useReducer(sectionReducer, {isOpen: false,});
 
 
-
+let allStateFalse; 
+if(isVid1Clicked === false && 
+    isVid2Clicked === false && 
+    isVid3Clicked === false && 
+    isVid4Clicked === false && 
+    isVid5Clicked === false && 
+    isVid6Clicked === false && 
+    isVid7Clicked === false &&
+    isVid8Clicked === false ){
+    allStateFalse = true;
+    }
 
     const vid1ClickHandler = () => {
-        if(isVid1Clicked === false && 
-          isVid2Clicked === false && 
-          isVid3Clicked === false && 
-          isVid4Clicked === false && 
-          isVid5Clicked === false && 
-          isVid6Clicked === false && 
-          isVid7Clicked === false &&
-          isVid8Clicked === false ) 
+        if(allStateFalse) 
         {setIsVid1Clicked(true);}
     };
   const closeVid1Handler = () => {
@@ -34,14 +43,7 @@ const ArcFlash = () => {
   };
     
     const vid2ClickHandler = () => {
-        if(isVid1Clicked === false && 
-          isVid2Clicked === false && 
-          isVid3Clicked === false && 
-          isVid4Clicked === false && 
-          isVid5Clicked === false && 
-          isVid6Clicked === false && 
-          isVid7Clicked === false &&
-          isVid8Clicked === false ) 
+        if(allStateFalse) 
         {setIsVid2Clicked(true);}
     };
     const closeVid2Handler = () => {
@@ -49,14 +51,7 @@ const ArcFlash = () => {
   }
     
     const vid3ClickHandler = () => {
-  if (isVid1Clicked === false && 
-      isVid2Clicked === false && 
-      isVid3Clicked === false && 
-      isVid4Clicked === false && 
-      isVid5Clicked === false && 
-      isVid6Clicked === false && 
-      isVid7Clicked === false &&
-      isVid8Clicked === false )
+  if (allStateFalse )
       {setIsVid3Clicked(true);}
 
     };
@@ -65,14 +60,7 @@ const ArcFlash = () => {
   };
     
     const vid4ClickHandler = () => {
-if(isVid1Clicked === false && 
-  isVid2Clicked === false && 
-  isVid3Clicked === false && 
-  isVid4Clicked === false && 
-  isVid5Clicked === false && 
-  isVid6Clicked === false && 
-  isVid7Clicked === false &&
-  isVid8Clicked === false ) 
+if(allStateFalse ) 
   {setIsVid4Clicked(true);}
 
     };
@@ -81,14 +69,7 @@ if(isVid1Clicked === false &&
   };
 
     const vid5ClickHandler = () => {
-      if(isVid1Clicked === false && 
-          isVid2Clicked === false && 
-          isVid3Clicked === false && 
-          isVid4Clicked === false && 
-          isVid5Clicked === false && 
-          isVid6Clicked === false && 
-          isVid7Clicked === false &&
-          isVid8Clicked === false )
+      if(allStateFalse)
           {setIsVid5Clicked(true);}
 
     };
@@ -97,14 +78,7 @@ if(isVid1Clicked === false &&
   };
     
     const vid6ClickHandler = () => {
-if(isVid1Clicked === false && 
-  isVid2Clicked === false && 
-  isVid3Clicked === false && 
-  isVid4Clicked === false && 
-  isVid5Clicked === false && 
-  isVid6Clicked === false && 
-  isVid7Clicked === false &&
-  isVid8Clicked === false )
+if(allStateFalse )
   {setIsVid6Clicked(true);}
 
     };
@@ -113,14 +87,7 @@ if(isVid1Clicked === false &&
   };
 
   const vid7ClickHandler = () => {
-  if(isVid1Clicked === false && 
-      isVid2Clicked === false && 
-      isVid3Clicked === false && 
-      isVid4Clicked === false && 
-      isVid5Clicked === false && 
-      isVid6Clicked === false && 
-      isVid7Clicked === false &&
-      isVid8Clicked === false  )
+  if(allStateFalse)
       {setIsVid7Clicked(true);}
 
   };
@@ -128,15 +95,7 @@ if(isVid1Clicked === false &&
     setIsVid7Clicked(false)
 };
 const vid8ClickHandler = () => {
-  if(isVid1Clicked === false && 
-      isVid2Clicked === false && 
-      isVid3Clicked === false && 
-      isVid4Clicked === false && 
-      isVid5Clicked === false && 
-      isVid6Clicked === false && 
-      isVid7Clicked === false &&
-      isVid8Clicked === false )
-
+  if(allStateFalse)
       {setIsVid8Clicked(true);}
 
 };

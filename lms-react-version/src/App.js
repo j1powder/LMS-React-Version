@@ -22,13 +22,16 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
+
+
   return <Fragment>
     <Header/>
   <RouterProvider router={router} />
   <Footer/>
   </Fragment>
   
-  ;
+  
 }
 
 export default App;
