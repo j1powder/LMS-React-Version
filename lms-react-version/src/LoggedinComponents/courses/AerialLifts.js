@@ -199,32 +199,34 @@ const AerialLifts = () => {
             'D. Mobile Aerial Drive'],
         }
      ]; 
-
-     let allStateFalse;
-     if(isVid1Clicked === false && 
-      isVid2Clicked === false && 
-      isVid3Clicked === false && 
-      isVid4Clicked === false && 
-      isVid5Clicked === false && 
-      isVid6Clicked === false && 
-      isVid7Clicked === false &&
-      isVid8Clicked === false &&
-      isVid9Clicked === false &&
-      isVid10Clicked === false) {
-      allStateFalse = true;
-      } 
-    
-      const vid1ClickHandler = () => {
-          if(allStateFalse) 
+     const vid1ClickHandler = () => {
+          if(isVid1Clicked === false && 
+            isVid2Clicked === false && 
+            isVid3Clicked === false && 
+            isVid4Clicked === false && 
+            isVid5Clicked === false && 
+            isVid6Clicked === false && 
+            isVid7Clicked === false &&
+            isVid8Clicked === false &&
+            isVid9Clicked === false &&
+            isVid10Clicked === false) 
           {setIsVid1Clicked(true);}
       };
-
     const closeVid1Handler = () => {
         setIsVid1Clicked(false)
     };
       
       const vid2ClickHandler = () => {
-          if(allStateFalse) 
+          if(isVid1Clicked === false && 
+            isVid2Clicked === false && 
+            isVid3Clicked === false && 
+            isVid4Clicked === false && 
+            isVid5Clicked === false && 
+            isVid6Clicked === false && 
+            isVid7Clicked === false &&
+            isVid8Clicked === false &&
+            isVid9Clicked === false &&
+            isVid10Clicked === false) 
           {setIsVid2Clicked(true);}
       };
       const closeVid2Handler = () => {
@@ -232,7 +234,16 @@ const AerialLifts = () => {
     }
       
       const vid3ClickHandler = () => {
-    if (allStateFalse)
+    if (isVid1Clicked === false && 
+        isVid2Clicked === false && 
+        isVid3Clicked === false && 
+        isVid4Clicked === false && 
+        isVid5Clicked === false && 
+        isVid6Clicked === false && 
+        isVid7Clicked === false &&
+        isVid8Clicked === false &&
+        isVid9Clicked === false &&
+        isVid10Clicked === false)
         {setIsVid3Clicked(true);}
 
       };
@@ -241,7 +252,16 @@ const AerialLifts = () => {
     };
       
       const vid4ClickHandler = () => {
-if(allStateFalse) 
+if(isVid1Clicked === false && 
+    isVid2Clicked === false && 
+    isVid3Clicked === false && 
+    isVid4Clicked === false && 
+    isVid5Clicked === false && 
+    isVid6Clicked === false && 
+    isVid7Clicked === false &&
+    isVid8Clicked === false &&
+    isVid9Clicked === false &&
+    isVid10Clicked === false) 
     {setIsVid4Clicked(true);}
 
       };
@@ -250,7 +270,16 @@ if(allStateFalse)
     };
 
       const vid5ClickHandler = () => {
-        if(allStateFalse)
+        if(isVid1Clicked === false && 
+            isVid2Clicked === false && 
+            isVid3Clicked === false && 
+            isVid4Clicked === false && 
+            isVid5Clicked === false && 
+            isVid6Clicked === false && 
+            isVid7Clicked === false &&
+            isVid8Clicked === false &&
+            isVid9Clicked === false &&
+            isVid10Clicked === false)
             {setIsVid5Clicked(true);}
 
       };
@@ -259,7 +288,16 @@ if(allStateFalse)
     };
       
       const vid6ClickHandler = () => {
-if(allStateFalse)
+if(isVid1Clicked === false && 
+    isVid2Clicked === false && 
+    isVid3Clicked === false && 
+    isVid4Clicked === false && 
+    isVid5Clicked === false && 
+    isVid6Clicked === false && 
+    isVid7Clicked === false &&
+    isVid8Clicked === false &&
+    isVid9Clicked === false &&
+    isVid10Clicked === false)
     {setIsVid6Clicked(true);}
 
       };
@@ -268,7 +306,16 @@ if(allStateFalse)
     };
 
     const vid7ClickHandler = () => {
-    if(allStateFalse)
+    if(isVid1Clicked === false && 
+        isVid2Clicked === false && 
+        isVid3Clicked === false && 
+        isVid4Clicked === false && 
+        isVid5Clicked === false && 
+        isVid6Clicked === false && 
+        isVid7Clicked === false &&
+        isVid8Clicked === false &&
+        isVid9Clicked === false &&
+        isVid10Clicked === false)
         {setIsVid7Clicked(true);}
 
     };
@@ -276,7 +323,16 @@ if(allStateFalse)
       setIsVid7Clicked(false)
   };
   const vid8ClickHandler = () => {
-    if(allStateFalse)
+    if(isVid1Clicked === false && 
+        isVid2Clicked === false && 
+        isVid3Clicked === false && 
+        isVid4Clicked === false && 
+        isVid5Clicked === false && 
+        isVid6Clicked === false && 
+        isVid7Clicked === false &&
+        isVid8Clicked === false &&
+        isVid9Clicked === false &&
+        isVid10Clicked === false)
         {setIsVid8Clicked(true);}
 
 };
@@ -285,7 +341,16 @@ const closeVid8Handler = () => {
 };
 
 const vid9ClickHandler = () => {
- if(allStateFalse)    
+ if(isVid1Clicked === false && 
+    isVid2Clicked === false && 
+    isVid3Clicked === false && 
+    isVid4Clicked === false && 
+    isVid5Clicked === false && 
+    isVid6Clicked === false && 
+    isVid7Clicked === false &&
+    isVid8Clicked === false &&
+    isVid9Clicked === false &&
+    isVid10Clicked === false)    
     {setIsVid9Clicked(true);}
 
 };
@@ -294,7 +359,16 @@ const closeVid9Handler = () => {
 };
 
 const vid10ClickHandler = () => {
-if(allStateFalse)
+if(isVid1Clicked === false && 
+    isVid2Clicked === false && 
+    isVid3Clicked === false && 
+    isVid4Clicked === false && 
+    isVid5Clicked === false && 
+    isVid6Clicked === false && 
+    isVid7Clicked === false &&
+    isVid8Clicked === false &&
+    isVid9Clicked === false &&
+    isVid10Clicked === false)
     {setIsVid10Clicked(true);}
 
 };
@@ -303,7 +377,17 @@ const closeVid10Handler = () => {
 };
 
 const vid11ClickHandler = () => {
-    if(allStateFalse)
+    if(isVid1Clicked === false && 
+        isVid2Clicked === false && 
+        isVid3Clicked === false && 
+        isVid4Clicked === false && 
+        isVid5Clicked === false && 
+        isVid6Clicked === false && 
+        isVid7Clicked === false &&
+        isVid8Clicked === false &&
+        isVid9Clicked === false &&
+        isVid10Clicked === false &&
+        isVid11Clicked === false)
         {setIsVid11Clicked(true);}
     
     };
@@ -313,15 +397,13 @@ const vid11ClickHandler = () => {
 
 return <Fragment>
 <Card onClick={vid1ClickHandler} className='coursecard' title="welcome">
-    
     {isVid1Clicked && <div>
     <ReactPlayer className='video-one' url={aerialLifts[0].video} controls></ReactPlayer>
     <br/><p>{aerialLifts[0].q1}</p> <input type='checkbox'/><br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid1Handler}>Next</Button> </div>}
-</Card>
+    </Card>
 
 <Card onClick={vid2ClickHandler} className='coursecard' title="Introduction">
-    
     {isVid2Clicked && <div> 
     <ReactPlayer className='video-one' url={aerialLifts[1].video} controls></ReactPlayer>
     <form style={{ marginTop: '2rem' }}><p><b>{aerialLifts[1].q1[1]}</b></p>
@@ -333,7 +415,7 @@ return <Fragment>
     <input type='checkbox'/><label>{aerialLifts[1].q2[4]}</label><br/>
     <input type='checkbox'/><label>{aerialLifts[1].q2[5]}</label><br/>    </form><br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid2Handler}>Next</Button> </div>}
-</Card>
+    </Card>
 
 <Card onClick={vid3ClickHandler} className='coursecard' title="Equipment Requirements and Standards">
     {isVid3Clicked && <div> 
@@ -352,7 +434,7 @@ return <Fragment>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid3Handler}>Next</Button> </div>}
-</Card>
+    </Card>
 
 <Card onClick={vid4ClickHandler} className='coursecard' title="Safe Use of Aerial Lifts">
 {isVid4Clicked && <div> 

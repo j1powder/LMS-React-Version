@@ -17,77 +17,39 @@ import "primeicons/primeicons.css";
 //import Welcome from './Welcome';
 
 const Dashboard = (props) => {
-
-/*     const openState = {
-        aLiftsisOpen: false,
-        aFlashisOpen: false,
-    }
-    const openAFlash = 'makeOpen';
-    const openALifts = 'makeClosed';
-    const closeAlifts = 'closeAlifts';
-
-    const panelReducer = (state, action) => {
-    if(action.type === openAFlash){
-            return {...state, aFlashisOpen: true,}
-        }
-        
-    if(action.type === openALifts){
-        return { ...state, aLiftsisOpen: true, }
-        }
-    if(action.type === closeAlifts) {
-            return {...state, aLiftsisOpen: false }
-        }
-    } */
-
-
-//const [state, dispatch] = useReducer(panelReducer, openState);
-
-
-
 const [isAerialLifts, setIsAerialLifts] = useState(false);
 const [isArcFlash, setIsArcFlash] = useState(false);
 
-/* const aerialLiftsHandler = () => {
-dispatch({type: openALifts});
-console.log(state);
-} */
-
-
 const aerialLiftHandler = () => {
     if(isAerialLifts === false && isArcFlash === false){
-           setIsAerialLifts(true);
+            setIsAerialLifts(true);
         }
-    }  
+    } 
 
 const closeAerialLifts = () => {
     setIsAerialLifts(false);
- 
-} 
+}
 
 const arcFlashHandler = () => {
     if(isAerialLifts === false && isArcFlash === false){
             setIsArcFlash(true);
         }
-    }  
-
-/* const arcFlashHandler = () => {
-    dispatch({ type: openAFlash, })
-} */
+    } 
 
 const closeArcFlash = () => {
     setIsArcFlash(false);
-} 
+}
 
     return <Fragment>
    <Panel header="Company Data" >
     <h1>This is my dashboard</h1>
     </Panel>
     
-    <Panel header="My Courses" >
-        <Card onClick={aerialLiftHandler} className='courses' title="Aerial Lifts">
+    <Panel header="My Courses" toggleable>
+        {!isArcFlash && <Card onClick={aerialLiftHandler} className='courses' title="Aerial Lifts" toggleable>
     {isAerialLifts && <div><AerialLifts /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLifts}>Back to Courses</Button></div>}
-       </Card>
-       <Card onClick={arcFlashHandler} className='courses' title="Arc Flash">{isArcFlash && <div><ArcFlash /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}</Card>
+       </Card>}
+       { !isAerialLifts && <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">{isArcFlash && <div><ArcFlash /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}</Card>}
   </Panel>     
         
 {/*         <Panel header="Fall Protection" toggleable>
