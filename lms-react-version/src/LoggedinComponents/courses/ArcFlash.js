@@ -15,6 +15,16 @@ const ArcFlash = () => {
     const [isVid7Clicked, setIsVid7Clicked] = useState(false);
     const [isVid8Clicked, setIsVid8Clicked] = useState(false);
     const [score, setScore] = useState(0);
+    const [sectionScore, setSectionScore] = useState('')
+
+    const sectionHandler = (isCorrect) => {
+        setSectionScore('');
+        if (isCorrect) {
+            setSectionScore('Correct');
+        } else {
+            setSectionScore('Incorrect');
+        }
+    }
 
     const handleClick = (isCorrect) => {
         if (isCorrect) {
@@ -51,7 +61,9 @@ const ArcFlash = () => {
         {setIsVid2Clicked(true);}
     };
     const closeVid2Handler = () => {
-      setIsVid2Clicked(false)
+      setIsVid2Clicked(false);
+      setSectionScore('');
+
   }
     
     const vid3ClickHandler = () => {
@@ -60,6 +72,7 @@ const ArcFlash = () => {
     };
     const closeVid3Handler = () => {
       setIsVid3Clicked(false)
+      setSectionScore('');
   };
     
     const vid4ClickHandler = () => {
@@ -69,6 +82,7 @@ if(allStateIsFalse)
     };
     const closeVid4Handler = () => {
       setIsVid4Clicked(false)
+      setSectionScore('');
   };
 
     const vid5ClickHandler = () => {
@@ -78,6 +92,7 @@ if(allStateIsFalse)
     };
     const closeVid5Handler = () => {
       setIsVid5Clicked(false)
+      setSectionScore('');
   };
     
     const vid6ClickHandler = () => {
@@ -87,6 +102,7 @@ if(allStateIsFalse)
     };
     const closeVid6Handler = () => {
       setIsVid6Clicked(false)
+      setSectionScore('');
   };
 
   const vid7ClickHandler = () => {
@@ -96,6 +112,7 @@ if(allStateIsFalse)
   };
   const closeVid7Handler = () => {
     setIsVid7Clicked(false)
+    setSectionScore('');
 };
 const vid8ClickHandler = () => {
   if(allStateIsFalse){
@@ -129,15 +146,16 @@ return <Fragment>
     <form>
     <p><b>{questions[0].questionText}</b></p>
     {questions[0].answerOptions.map((item) => (
-    <div><input type="checkbox" />
+    <div><input name='q1' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
     <p><b>{questions[1].questionText}</b></p>
     {questions[1].answerOptions.map((item) => (
-    <div><input type="checkbox" />
+    <div><input name='q2' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
     </form>
+    <h3>{sectionScore}</h3>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid2Handler}>Next</Button> </div>}
 </Card>
@@ -148,14 +166,15 @@ return <Fragment>
     <form>
     <p><b>{questions[2].questionText}</b></p>
     {questions[2].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q3' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
     <p><b>{questions[3].questionText}</b></p>
     {questions[3].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q4' type="radio" onClick={() => sectionHandler(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
+    <h3>{sectionScore}</h3>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid3Handler}>Next</Button> </div>}
@@ -167,15 +186,16 @@ return <Fragment>
     <form>
     <p><b>{questions[4].questionText}</b></p>
     {questions[4].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q5' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>{questions[5].questionText}</b></p>
     {questions[5].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q6' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
+    <h3>{sectionScore}</h3>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid4Handler}>Next</Button> </div>}
@@ -187,15 +207,16 @@ return <Fragment>
     <form>
     <p><b>{questions[6].questionText}</b></p>
     {questions[6].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q7' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>{questions[7].questionText}</b></p>
     {questions[7].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q8' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
+    <h3>{sectionScore}</h3>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid5Handler}>Next</Button> </div>}
@@ -207,15 +228,16 @@ return <Fragment>
     <form>
     <p><b>{questions[8].questionText}</b></p>
     {questions[8].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q9' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>{questions[9].questionText}</b></p>
     {questions[9].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q10' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
+    <h3>{sectionScore}</h3>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid6Handler}>Next</Button> </div>}
@@ -227,15 +249,16 @@ return <Fragment>
     <form>
     <p><b>{questions[10].questionText}</b></p>
     {questions[10].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q11' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>{questions[11].questionText}</b></p>
     {questions[11].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='q12' type="radio" onClick={() => sectionHandler(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
+    <h3>{sectionScore}</h3>
     </form>
     <br/><br/>
     <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeVid7Handler}>Next</Button> </div>}
@@ -247,73 +270,73 @@ return <Fragment>
     <form>
     <p><b>1. {questions[0].questionText}</b></p>
     {questions[0].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final1' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
     
     <p><b>2. {questions[1].questionText}</b></p>
     {questions[1].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final2' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
 
    <p><b>3. {questions[2].questionText}</b></p>
     {questions[2].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final3' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
 
    <p><b>4. {questions[3].questionText}</b></p>
     {questions[3].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final4' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
 
     <p><b>5. {questions[4].questionText}</b></p>
     {questions[4].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final5' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
     
     <p><b>6. {questions[5].questionText}</b></p>
     {questions[5].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final6' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
 
     <p><b>7. {questions[6].questionText}</b></p>
     {questions[6].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final7' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
 
     <p><b>8. {questions[7].questionText}</b></p>
     {questions[7].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final8' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))} 
 
     <p><b>9. {questions[8].questionText}</b></p>
     {questions[8].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final9' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>10. {questions[9].questionText}</b></p>
     {questions[9].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final10' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>11. {questions[10].questionText}</b></p>
     {questions[10].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final11' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
 
 <p><b>12. {questions[11].questionText}</b></p>
     {questions[11].answerOptions.map((item) => (
-    <div><input type="checkbox" onClick={() => handleClick(item.isCorrect)}/>
+    <div><input name='final12' type="radio" onClick={() => handleClick(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
     </form>
