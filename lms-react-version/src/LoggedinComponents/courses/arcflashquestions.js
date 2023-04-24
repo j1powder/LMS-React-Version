@@ -1,110 +1,9 @@
 
-const questions = [
-    {
-      questionText: "The release of an arc flash can be ______ or hotter.",
-      answerOptions: [
-        { answerText: "A. 10,000 degrees F", isCorrect: false },
-        { answerText: "B. 2,000 degrees F", isCorrect: false },
-        { answerText: "C. 5,000 degrees F", isCorrect: true },
-        { answerText: "D. 8,000 degrees F", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Arc flash can occur due to all the following EXCEPT:",
-      answerOptions: [
-        { answerText: "A. Dust", isCorrect: false },
-        { answerText: "B. Corrosion", isCorrect: false },
-        { answerText: "C. Condensation", isCorrect: false },
-        { answerText: "D. Wind", isCorrect: true },
-      ],
-    },
-    {
-      questionText: "True or False: The heat of a flash can reach up to 45,000 degrees F.",
-      answerOptions: [
-        { answerText: "A. True", isCorrect: true },
-        { answerText: "B. False", isCorrect: false },
-  
-      ],
-    },
-    {
-      questionText: "A sound blast can reach up to ____ decibels?",
-      answerOptions: [
-        { answerText: "A. 200 dB", isCorrect: false },
-        { answerText: "B. 140 dB", isCorrect: false },
-        { answerText: "C. 95 dB", isCorrect: false },
-        { answerText: "D. 35 dB", isCorrect: true },
-      ],
-    },
-  {
-    questionText:'_____ created the approach/protection boundaries.',
-    answerOptions: [
-      {answerText:'A. NFPA', isCorrect: false },
-      {answerText: 'B. EPA', isCorrect: false },
-      {answerText: 'C. OSHA', isCorrect: true },
-      {answerText: 'D. CDC', isCorrect: false},
-    ],
-  },
-  {
-    questionText:'The following are protective measures EXCEPT:',
-    answerOptions: [
-      {answerText:'A. De-energizing circuits', isCorrect: false },
-      {answerText: 'B. Ventilation systems', isCorrect: false },
-      {answerText: 'C. Insulation', isCorrect: true },
-      {answerText: 'D. Ground Fault Circuit Interrupters (GFCI)', isCorrect: false},
-    ],
-  },
-  {
-  questionText: 'True or False: The best way to control arc flash hazards is to Lockout/Tagout',
-  answerOptions: [
-    {answerText: 'A. True', isCorrect: true },
-    {answerText: 'B. False', isCorrect: false },
-   ],
-  },
-  {
-  questionText: 'The basic steps to LOTO include all the following EXCEPT:',   
-  answerOptions: [
-    {answerText: 'A. Identify the equipment source of power', isCorrect: true},
-    {answerText: 'B. Calling in a LOTO specialist to perform the job', isCorrect: false },
-    {answerText: 'C. Apply locks and tags to keep the power sources disconnected', isCorrect: false },
-    {answerText: 'D. Confirm that the equipment is completely de-energized', isCorrect: false },
-  ],
-  },
-  {
-  questionText: 'True or False: Fire Retardant clothing is the best kind of protective clothing',
-  answerOptions: [
-  {answerText: 'A. True', isCorrect: false},
-  {answerText: 'B. False', isCorrect: true },],
-  },
-  {
-  questionText: 'A PPE program must be implemented when?',
-  answerOptions: [
-  {answerText: 'A. After PPE is used', isCorrect: false},
-  {answerText: 'B. When PPE is picked out', isCorrect: false},
-  {answerText: 'C. When cleaning PPE', isCorrect: false},
-  {answerText: 'D. When PPE is used', isCorrect: true},]
-  },
-  {
-  questionText: 'True or False: A qualified person does not have to understand or demonstrate knowledge of arc flash hazards.',
-  answerOptions: [
-    {answerText: 'A. True', isCorrect: false},
-    {answerText: 'B. False', isCorrect: true}],
-  },
-  {
-  questionText: 'What training can employees take?',
-  answerOptions: [
-  { answerText: 'A. NFPA 60E', isCorrect: false },
-  { answerText: 'B. NFPA 70E', isCorrect: false },
-  { answerText: 'C. None is required', isCorrect: false },
-  { answerText: 'D. OSHA training', isCorrect: true },
-   ],
-  }
-  
-  ];
+
  
 const videos = [
     {video:'https://player.vimeo.com/video/519129758', 
-    title: 'Welcome', 
-    q1: "I am ready to proceed", 
+     
    },
 
    {
@@ -142,4 +41,4 @@ const videos = [
     }
 ];
 
-  export {questions, videos};
+  export { videos };

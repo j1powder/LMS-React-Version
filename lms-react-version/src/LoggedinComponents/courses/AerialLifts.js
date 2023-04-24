@@ -16,7 +16,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 
-const AerialLifts = () => {
+const AerialLifts = (props) => {
      const [isVid1Clicked, setIsVid1Clicked] = useState(false);
      const [isVid2Clicked, setIsVid2Clicked] = useState(false);
      const [isVid3Clicked, setIsVid3Clicked] = useState(false);

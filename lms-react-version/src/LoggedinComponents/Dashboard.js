@@ -67,7 +67,7 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
 })
 
 }, [])
-console.log(data)
+//console.log(data)
 
 
     return <Fragment>
@@ -80,7 +80,7 @@ console.log(data)
         {!isArcFlash && <Card onClick={aerialLiftHandler} className='courses' title="Aerial Lifts" >
     {isAerialLifts && <div><AerialLifts /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLifts}>Back to Courses</Button></div>}
        </Card>}
-       { !isAerialLifts && <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">{isArcFlash && <div><ArcFlash /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}</Card>}
+       { !isAerialLifts && <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">{isArcFlash && <div><ArcFlash loadData={data} /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}</Card>}
   </Panel>     
         
 </Fragment>
