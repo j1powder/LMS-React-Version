@@ -9,6 +9,8 @@ import { projectAuth } from '../config';
 const LoginPage = ({ existingUser }) => {
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
+//const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
 async function handleSubmit(event) {
     event.preventDefault();
@@ -20,6 +22,8 @@ async function handleSubmit(event) {
  catch(error){
     alert(error.message);
 }
+console.log(username)
+
 }
 
 const handleLogout = () => {

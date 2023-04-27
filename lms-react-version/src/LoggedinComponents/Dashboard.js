@@ -6,6 +6,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import AerialLifts from './courses/AerialLifts';
 import ArcFlash from './courses/ArcFlash';
+import AerialLiftsNew from './courses/AerialLiftsNew';
 //theme
 import "primereact/resources/themes/soho-light/theme.css";     
     
@@ -17,32 +18,51 @@ import "primeicons/primeicons.css";
 //import Welcome from './Welcome';
 
 const Dashboard = (props) => {
-const [isAerialLifts, setIsAerialLifts] = useState(false);
-const [isArcFlash, setIsArcFlash] = useState(false);
+const [isAerialLiftsClicked, setIsAerialLiftsClicked] = useState(false);
+const [isArcFlashClicked, setIsArcFlashClicked] = useState(false);
+const [isAerialLiftsNewClicked, setIsAerialLiftsNewClicked] = useState(false);
 const [data, setData] = useState(null);
 const [error, setError] = useState();
 const [pending, setPending] = useState();
 
+let NoCoursesClicked;
+if(isAerialLiftsClicked === false && 
+   isArcFlashClicked === false && 
+   isAerialLiftsNewClicked === false){
+   NoCoursesClicked = true;
+   }
 
 const aerialLiftHandler = () => {
-    if(isAerialLifts === false && isArcFlash === false){
-            setIsAerialLifts(true);
+    if(NoCoursesClicked){
+            setIsAerialLiftsClicked(true);
         }
-    } 
+    }
 
-const closeAerialLifts = () => {
-    setIsAerialLifts(false);
+    const closeAerialLifts = () => {
+        setIsAerialLiftsClicked(false);
+    }
+    
+const AerialLiftNewHandler = () => {
+    if(NoCoursesClicked){
+    setIsAerialLiftsNewClicked(true);
+    }
+} 
+
+    const closeAerialLiftsNew = () => {
+    setIsAerialLiftsNewClicked(false);
 }
+
 
 const arcFlashHandler = () => {
-    if(isAerialLifts === false && isArcFlash === false){
-            setIsArcFlash(true);
+    if(NoCoursesClicked){
+            setIsArcFlashClicked(true);
         }
     } 
 
-const closeArcFlash = () => {
-    setIsArcFlash(false);
+    const closeArcFlash = () => {
+    setIsArcFlashClicked(false);
 }
+
 
 useEffect(()=>{
     setPending(true)
@@ -66,7 +86,7 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
     setPending(false)
 })
 
-}, [])
+}, []) 
 //console.log(data)
 
 
@@ -77,10 +97,16 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
     <Card className='courses' title='General Text'></Card>
     
     <Panel header="My Courses" toggleable>
-        {!isArcFlash && <Card onClick={aerialLiftHandler} className='courses' title="Aerial Lifts" >
-    {isAerialLifts && <div><AerialLifts /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLifts}>Back to Courses</Button></div>}
-       </Card>}
-       { !isAerialLifts && <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">{isArcFlash && <div><ArcFlash loadData={data} /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}</Card>}
+        <Card onClick={aerialLiftHandler} className='courses' title="Aerial Lifts" >
+        {isAerialLiftsClicked && <div><AerialLifts  /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLifts}>Back to Courses</Button></div>}
+       </Card>
+       <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">
+        {isArcFlashClicked && <div><ArcFlash loadData={data} /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}
+        </Card>
+        <Card title='Aerial Lifts-New' onClick={AerialLiftNewHandler} > 
+        {isAerialLiftsNewClicked && <div><AerialLiftsNew loadData={data} ></AerialLiftsNew><Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLiftsNew}>Back to Courses</Button> </div>}
+        </Card>
+
   </Panel>     
         
 </Fragment>
