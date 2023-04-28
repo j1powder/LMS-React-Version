@@ -4,8 +4,10 @@ import Header from './Layout/Header';
 import Footer from './Layout/Footer';
 import HomePage from './components/Homepage';
 import LoginPage from './components/Loginpage';
-import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
 import Dashboard from './LoggedinComponents/Dashboard';
+import useAuthContext from './hooks/useAuthContext';
+
 //theme
 //import "primereact/resources/themes/lara-light-indigo/theme.css";     
     
@@ -15,13 +17,31 @@ import Dashboard from './LoggedinComponents/Dashboard';
 //icons
 //import "primeicons/primeicons.css";
 
-const router = createBrowserRouter([
-  {path: '/', element: <HomePage/>},
-  {path:'/Login', element: <LoginPage/>},
-  {path: '/Dashboard', element: <Dashboard/> }
-])
+
 
 function App() {
+  const { user } = useAuthContext();
+
+const checkAuthIn = () => {
+  if(user) {
+    return redirect('/Dashboard')
+  }
+  return null
+}
+const checkAuthOut = () => {
+  if(!user){
+    return redirect('/')
+  }
+  return null
+}
+
+  const router = createBrowserRouter([
+    {path: '/', element: <HomePage/>, loader:checkAuthIn},
+    {path:'/Login', element: <LoginPage/>, loader: checkAuthIn},
+    {path: '/Dashboard', element: <Dashboard/>, loader: checkAuthOut }
+  ])
+
+
   return <Fragment>
     <Header/>
   <RouterProvider router={router} />
