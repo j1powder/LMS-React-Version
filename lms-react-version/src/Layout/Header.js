@@ -32,6 +32,9 @@ const Header = () => {
     { label: 'Login', command: () => {
         window.location.href='/Login'
     } },
+    {label: 'Register', command: () => {
+        window.location.href='/Register'
+    }}
 ]
    }
 //const start = <img src={logo} alt="logo"/>

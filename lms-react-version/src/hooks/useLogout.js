@@ -22,7 +22,7 @@ const useLogout = () => {
             //update state 
             setIsPending(false)
             setError(null)
-    
+            window.location.reload();
             // if(!isCancelled){
     
             // }

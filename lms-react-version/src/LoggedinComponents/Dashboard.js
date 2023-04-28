@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
 import { projectFirestore } from '../config';
+import useAuthContext from '../hooks/useAuthContext';
 import './Dashboard.css';
 import { Panel } from 'primereact/panel';
 import { Card } from 'primereact/card';
@@ -24,6 +25,7 @@ const [isAerialLiftsNewClicked, setIsAerialLiftsNewClicked] = useState(false);
 const [data, setData] = useState(null);
 const [error, setError] = useState();
 const [pending, setPending] = useState();
+const { user } = useAuthContext();
 
 let NoCoursesClicked;
 if(isAerialLiftsClicked === false && 
@@ -91,8 +93,8 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
 
 
     return <Fragment>
-   <Panel header="Company Data" >
-    <h1>This is my dashboard</h1>
+   <Panel header="My Company Name" >
+    <h1>Welcome {user.displayName}</h1>
     </Panel>
     <Card className='courses' title='General Text'></Card>
     

@@ -3,14 +3,14 @@ import { Card } from 'primereact/card';
 import { useState } from 'react';
 import useLogin from '../hooks/useLogin';
 import useAuthContext from '../hooks/useAuthContext';
-import useLogout from '../hooks/useLogout';
+//import useLogout from '../hooks/useLogout';
 
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { login, error, isPending } = useLogin();
-    const { logout } = useLogout();
+  //  const { logout } = useLogout();
     const { user } = useAuthContext();
 
     
@@ -34,7 +34,9 @@ const LoginPage = () => {
         <label>Username: </label><input type='email' onChange={(e)=> setEmail(e.target.value)} />
         <label>Password: </label><input type='password' onChange={(e)=> setPassword(e.target.value)} />
         <br/>
-        <button class='loginbtn'>Submit</button> <br/>
+    {!error && !isPending && <><button className='loginbtn' >Login</button> <br/></>}
+    {isPending && <><button className='loginbtn'>...Loading</button> <br/></>}
+    {error && <><button className='loginbtn'>Whoops!!!</button> <br/></>}
     </form>
     
 

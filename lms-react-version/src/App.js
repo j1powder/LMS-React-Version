@@ -4,6 +4,7 @@ import Header from './Layout/Header';
 import Footer from './Layout/Footer';
 import HomePage from './components/Homepage';
 import LoginPage from './components/Loginpage';
+import Register from './components/Register';
 import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
 import Dashboard from './LoggedinComponents/Dashboard';
 import useAuthContext from './hooks/useAuthContext';
@@ -38,7 +39,8 @@ const checkAuthOut = () => {
   const router = createBrowserRouter([
     {path: '/', element: <HomePage/>, loader:checkAuthIn},
     {path:'/Login', element: <LoginPage/>, loader: checkAuthIn},
-    {path: '/Dashboard', element: <Dashboard/>, loader: checkAuthOut }
+    {path: '/Dashboard', element: <Dashboard/>, loader: checkAuthOut },
+    {path: '/Register', element: <Register/>}
   ])
 
 

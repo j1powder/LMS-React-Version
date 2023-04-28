@@ -1,4 +1,4 @@
-#formsection {
+#regpage {
     min-height: 450px;
 }
 
@@ -9,10 +9,9 @@
     background-color: #42B1FF;
     color: black;
     box-shadow: 1px 1px 5px 2px black;
-
 }
 
-#loginpage {
+#registerpage {
     margin: 3rem auto;
     display: block;
     background-color: ghostwhite;
@@ -33,6 +32,7 @@
     line-height: 28px;
     margin-bottom: 1rem;
     width: 85%;
+    display: block;
 }
 
 .loginbtn {

@@ -4,7 +4,8 @@ import { Button } from 'primereact/button';
 import ReactPlayer from 'react-player';
 import { videos } from './arcflashquestions';
 import './AerialLifts.css';
-
+       
+        
 const ArcFlash = (props) => {
     const [isVid1Clicked, setIsVid1Clicked] = useState(false);
     const [isVid2Clicked, setIsVid2Clicked] = useState(false);
@@ -122,13 +123,35 @@ const closeVid8Handler = () => {
 setIsVid8Clicked(false)
 };
 
+const createCourse = () => {
+//props.loadData[2]
+Object.values(props.loadData[2]).map((question)=>{
+    return question.questionText
 
+})
+}
+console.log(props.loadData[2])
+console.log(props.loadData[2][1].answerOptions)
 
+console.log(Object.values(props.loadData[2]).map((question)=>{
+    return question.answerOptions
+}))
+    
+  
 
-console.log(props.loadData)
+console.log(props.loadData[2][0])
 
 
 return <Fragment>
+    <Card title='Arc Flash'>
+    {Object.values(props.loadData[2]).map((question)=> (
+    <Card key={question.id} className='coursecard' title={question.questionText}>
+
+    </Card>
+) )}  
+</Card>
+
+
 <Card onClick={vid1ClickHandler} className="coursecard" title='Welcome'>    
     {isVid1Clicked && <div>
     <ReactPlayer className='video-one' url={videos[0].video}  controls></ReactPlayer>
@@ -140,13 +163,13 @@ return <Fragment>
 {isVid2Clicked && <div> 
     <ReactPlayer className='video-one' url={videos[1].video} controls></ReactPlayer>
     <form >
-    <p><b>{props.loadData[0][0].questionText}</b></p>
-    {props.loadData[0][0].answerOptions.map((item) => (
+    <p><b>{props.loadData[2][0].questionText}</b></p>
+    {props.loadData[2][0].answerOptions.map((item) => (
     <div><input name='q1' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
-    <p><b>{props.loadData[0][1].questionText}</b></p>
-    {props.loadData[0][1].answerOptions.map((item) => (
+    <p><b>{props.loadData[2][1].questionText}</b></p>
+    {props.loadData[2][1].answerOptions.map((item) => (
     <div><input name='q2' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))}
@@ -160,13 +183,13 @@ return <Fragment>
 {isVid3Clicked && <div> 
     <ReactPlayer className='video-one' url={videos[2].video} controls></ReactPlayer>
     <form>
-    <p><b>{props.loadData[0][2].questionText}</b></p>
-    {props.loadData[0][2].answerOptions.map((item) => (
+    <p><b>{props.loadData[2][2].questionText}</b></p>
+    {props.loadData[2][2].answerOptions.map((item) => (
     <div><input name='q3' type="radio" onClick={() => sectionHandler(item.isCorrect)} />
     <label>{item.answerText}</label></div>
     ))} 
-    <p><b>{props.loadData[0][3].questionText}</b></p>
-    {props.loadData[0][3].answerOptions.map((item) => (
+    <p><b>{props.loadData[2][3].questionText}</b></p>
+    {props.loadData[2][3].answerOptions.map((item) => (
     <div><input name='q4' type="radio" onClick={() => sectionHandler(item.isCorrect)}/>
     <label>{item.answerText}</label></div>
     ))}
