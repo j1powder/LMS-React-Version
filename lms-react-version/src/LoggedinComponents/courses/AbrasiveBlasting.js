@@ -7,16 +7,16 @@ import useCollection from '../../hooks/useCollection';
 import './AerialLifts.css';
        
         
-const AerialLifts = (props) => {
+const AbrasiveBlasting = (props) => {
 
     const [openItem, setOpenItem] = useState(null);
    // const [score, setScore] = useState(0);
-   // const [sectionScore, setSectionScore] = useState('')
-    const { documents, error } = useCollection('newcourses/Aerial Lifts/Sections')
+   const [sectionScore, setSectionScore] = useState('')
+    const { documents, error } = useCollection('newcourses/Abrasive Blasting Safety/Sections')
 
     
 
-/*     const sectionHandler = (isCorrect) => {
+     const sectionHandler = (isCorrect) => {
         setSectionScore('');
         if (isCorrect) {
             setSectionScore('Correct');
@@ -25,7 +25,7 @@ const AerialLifts = (props) => {
         }
     }
 
-    const handleClick = (isCorrect) => {
+   /*  const handleClick = (isCorrect) => {
         if (isCorrect) {
           setScore(score + 1);
         }
@@ -33,12 +33,12 @@ const AerialLifts = (props) => {
 
     const totalScore = () => {
         return Math.round((score / 12) * 100);
-       } */
+       } */ 
 
 
 
 if(documents){
-    console.log(openItem)
+    console.log(documents)
 }
 
     
@@ -53,12 +53,13 @@ return <Fragment>
 {openItem === section.id ? <>
             <ReactPlayer className='video-one' url={section.video}  controls></ReactPlayer>
               <p><b>{section.question1.questionText}</b></p>
-              {section.question1.answerOptions.map((item)=>(<label className='answers'><input className='answerinput' type='radio' />{item}</label>))}
+              {section.question1.answerOptions.map((item)=>(<label className='answers'><input onClick={sectionHandler} className='answerinput' type='radio' />{item}</label>))}
               <br/>
               <p><b>{section.question2.questionText}</b></p>
-              {section.question2.answerOptions.map((item)=>(<label className='answers'><input className='answerinput' type='radio' />{item}</label>))}  
+              {section.question2.answerOptions.map((item)=>(<label className='answers'><input onClick={sectionHandler} className='answerinput' type='radio' />{item}</label>))}  
               <br/>
               <br/>
+              <p>{sectionScore}</p>
               <Button style={{backgroundColor:'gray', border: 'black'}} onClick={()=> setOpenItem("")}>Close</Button>
               </> : null
               }
@@ -71,4 +72,4 @@ return <Fragment>
 </Fragment>
 }
 
-export default AerialLifts;
+export default AbrasiveBlasting;

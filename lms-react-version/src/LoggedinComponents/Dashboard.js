@@ -8,7 +8,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import AerialLifts from './courses/AerialLifts';
 import ArcFlash from './courses/ArcFlash';
-import AerialLiftsNew from './courses/AerialLiftsNew';
+import AbrasiveBlasting from './courses/AbrasiveBlasting';
 //theme
 import "primereact/resources/themes/soho-light/theme.css";     
     
@@ -107,8 +107,8 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
        <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">
         {isArcFlashClicked && <div><ArcFlash /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}
         </Card>
-        <Card title='Aerial Lifts-New' onClick={AerialLiftNewHandler} > 
-        {isAerialLiftsNewClicked && <div><AerialLiftsNew ></AerialLiftsNew><Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLiftsNew}>Back to Courses</Button> </div>}
+        <Card title='Abrasive Blasting' onClick={AerialLiftNewHandler} > 
+        {isAerialLiftsNewClicked && <div><AbrasiveBlasting></AbrasiveBlasting><Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLiftsNew}>Back to Courses</Button> </div>}
         </Card>
 
   </Panel>     

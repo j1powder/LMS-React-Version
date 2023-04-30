@@ -9,3 +9,14 @@ max-width: 100%;
     border: 1px grey solid;
 
 }
+
+.answers{
+display: block;
+}
+
+.answerinput {
+    
+    margin-right: 1rem; 
+
+}
+

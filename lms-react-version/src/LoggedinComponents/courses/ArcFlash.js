@@ -53,10 +53,12 @@ return <Fragment>
 {openItem === section.id ? <>
             <ReactPlayer className='video-one' url={section.video}  controls></ReactPlayer>
               <p><b>{section.question1.questionText}</b></p>
-              {section.question1.answerOptions.map((item)=>(<p>{item}</p>))}
+              {section.question1.answerOptions.map((item)=>(<label className='answers'><input className='answerinput' type='radio' />{item}</label>))}
               <br/>
               <p><b>{section.question2.questionText}</b></p>
-              {section.question2.answerOptions.map((item)=>(<p>{item}</p>))}  
+              {section.question2.answerOptions.map((item)=>(<label className='answers'><input className='answerinput' type='radio' />{item}</label>))}  
+              <br/>
+              <br/>
               <Button style={{backgroundColor:'gray', border: 'black'}} onClick={()=> setOpenItem("")}>Close</Button>
               </> : null
               }
