@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
-import { projectFirestore } from '../config';
+//import { projectFirestore } from '../config';
+import useCollection from '../hooks/useCollection';
 import useAuthContext from '../hooks/useAuthContext';
 import './Dashboard.css';
 import { Panel } from 'primereact/panel';
@@ -23,9 +24,10 @@ const [isAerialLiftsClicked, setIsAerialLiftsClicked] = useState(false);
 const [isArcFlashClicked, setIsArcFlashClicked] = useState(false);
 const [isAerialLiftsNewClicked, setIsAerialLiftsNewClicked] = useState(false);
 const [data, setData] = useState(null);
-const [error, setError] = useState();
-const [pending, setPending] = useState();
+//const [error, setError] = useState();
+//const [pending, setPending] = useState();
 const { user } = useAuthContext();
+const { documents, error } = useCollection('newcourses')
 
 let NoCoursesClicked;
 if(isAerialLiftsClicked === false && 
@@ -66,7 +68,7 @@ const arcFlashHandler = () => {
 }
 
 
-useEffect(()=>{
+/* useEffect(()=>{
     setPending(true)
 
 projectFirestore.collection('Courses').get().then((snapshot)=>{
@@ -88,7 +90,7 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
     setPending(false)
 })
 
-}, []) 
+}, [])  */
 //console.log(data)
 
 
@@ -103,10 +105,10 @@ projectFirestore.collection('Courses').get().then((snapshot)=>{
         {isAerialLiftsClicked && <div><AerialLifts  /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLifts}>Back to Courses</Button></div>}
        </Card>
        <Card onClick={arcFlashHandler}className='courses' title="Arc Flash">
-        {isArcFlashClicked && <div><ArcFlash loadData={data} /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}
+        {isArcFlashClicked && <div><ArcFlash /> <Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeArcFlash}>Back to Courses</Button></div>}
         </Card>
         <Card title='Aerial Lifts-New' onClick={AerialLiftNewHandler} > 
-        {isAerialLiftsNewClicked && <div><AerialLiftsNew loadData={data} ></AerialLiftsNew><Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLiftsNew}>Back to Courses</Button> </div>}
+        {isAerialLiftsNewClicked && <div><AerialLiftsNew ></AerialLiftsNew><Button style={{backgroundColor:'gray', border: 'black'}} onClick={closeAerialLiftsNew}>Back to Courses</Button> </div>}
         </Card>
 
   </Panel>     

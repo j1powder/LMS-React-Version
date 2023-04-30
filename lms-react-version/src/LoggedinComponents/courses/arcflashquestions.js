@@ -1,4 +1,4 @@
-
+/* 
 
  
 const videos = [
@@ -40,5 +40,7 @@ const videos = [
   
     }
 ];
+/* "Final Knowledge Check":{"video": "https://player.vimeo.com/video/455943382?h=2d45027c8e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+                         "title": "Final Knowledge Check" */
 
-  export { videos };
+
